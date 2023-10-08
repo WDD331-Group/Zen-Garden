@@ -1,0 +1,12 @@
+@use "_variables" as *;
+@use "_atoms";
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: $background;
+    font-family: $font-body;
+}
+
+

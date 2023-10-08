@@ -1,0 +1,43 @@
+@use "_variables" as *;
+
+// mixins
+@mixin fonts($fontFamily: $font-body, $fontSize: 1em) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+@mixin upper() {
+    text-transform: uppercase;
+}
+
+h1, h2 {
+    @include fonts($font-headlines, 2em);
+    @include upper();
+}
+h1 {
+    color: $dark-text;
+    background-color: $background;
+}
+h2 {
+    color: $accent2;
+    background-color: $background;
+}
+div {
+    padding: .5em;
+}
+p {
+    @include fonts();
+    color: $accent2;
+    background-color: $background;
+}
+a {
+    color: $dark-text;
+    font-family: $font-links;
+    text-decoration: none;
+}
+a:visited {
+    color: $light-text;
+}
+a:hover, a:active {
+    color: $accent2;
+}
+
