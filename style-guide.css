@@ -4,33 +4,14 @@ h1, h2 {
   text-transform: uppercase;
 }
 
-h3 {
-  font-size: 2.25em;
-  font-weight: 200;
-  letter-spacing: 1px;
-  line-height: 1em;
-  padding: 0.5em 0 0.25em 0;
-  margin: 5px;
+h1 {
+  color: #040613;
+  background-color: #223d52;
 }
 
-h4 {
-  padding: 0.5em 0 0.25em 0;
-  margin: 5px;
-}
-
-section {
-  background-color: white;
-  padding: 1em;
-  margin: 1em;
-}
-
-.colors > h3 {
-  width: 100%;
-  flex: 1 0 100%;
-}
-
-.element > h2{
-  color: white;
+h2 {
+  color: #34a4cf;
+  background-color: #223d52;
 }
 
 div {
@@ -40,18 +21,14 @@ div {
 p {
   font-family: "Lato", sans-serif;
   font-size: 1em;
+  color: #34a4cf;
+  background-color: #223d52;
 }
 
 a {
-  color: darkblue;
+  color: #040613;
   font-family: "Lora", serif;
   text-decoration: none;
-}
-
-.element {
-  border: 1px solid;
-  margin: 0.5em;
-  padding: 1em;
 }
 
 a:visited {
@@ -59,7 +36,7 @@ a:visited {
 }
 
 a:hover, a:active {
-  color: green;
+  color: #34a4cf;
 }
 
 * {
@@ -67,41 +44,8 @@ a:hover, a:active {
 }
 
 body {
-  background-color: #34a4cf;
+  background-color: #223d52;
   font-family: "Lato", sans-serif;
-}
-
-.colors {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.colors > figure {
-  margin: 0;
-  flex: 1 1 25%;
-}
-
-.swatch {
-  width: 100%;
-  height: 100px;
-  border: 1px solid;
-}
-
-.primary {
-  background-color: #041936;
-  color: white;
-}
-
-.accent1 {
-  background-color: #076db8;
-}
-
-.accent2 {
-  background-color: #34a4cf;
-}
-
-.text-dark {
-  background-color: #040613;
 }
 
 /*# sourceMappingURL=style-guide.css.map */

@@ -1,2 +1,29 @@
 @use "_variables" as *;
 @use "_atoms";
+
+header,
+.summary {
+    background-color: $primary-color;
+    text-align: center;
+    overflow: hidden;
+}
+.preamble,
+.explanation,
+.requirements {
+    background-color: $accent1-color;
+    overflow: hidden;
+}
+.participation,
+.benefits {
+    background-color: $accent2-color;
+    overflow: hidden;
+}
+footer {
+    background-color: $accent2-color;
+    padding: 2em;
+    overflow: hidden;
+}
+.wrapper {
+    background-color: $primary-color;
+    overflow: hidden;
+}

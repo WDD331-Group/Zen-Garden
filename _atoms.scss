@@ -1,7 +1,15 @@
 @use "_variables" as *;
 
 // mixins
-@mixin fonts($fontFamily: $font-body, $fontSize: 1em) {
+@mixin h-fonts($fontFamily: $headline-font, $fontSize: 2em) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+@mixin b-fonts($fontFamily: $body-font, $fontSize: 1em) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+@mixin l-fonts($fontFamily: $link-font, $fontSize: 1em) {
     font-family: $fontFamily;
     font-size: $fontSize;
 }
@@ -9,35 +17,85 @@
     text-transform: uppercase;
 }
 
-h1, h2 {
-    @include fonts($font-headlines, 2em);
-    @include upper();
-}
+//div {
+//   padding: .5em;
+//   border: solid black 1px;
+//}
+
+// main headings
 h1 {
-    color: $dark-text;
-    background-color: $background;
+    @include h-fonts();
+    color: $dark-text-color;
+    background-color: $accent1-color;
+    //width: 20%;
 }
 h2 {
-    color: $accent2;
-    background-color: $background;
+    @include h-fonts();
+    color: $accent2-color;
+    
 }
-div {
-    padding: .5em;
+
+// other headings
+.preamble h3,
+.explanation h3,
+.requirements h3 {
+    @include h-fonts();
+    @include upper();
+    color: $dark-text-color;
+    margin-left: 25px;
+    margin-right: 25px;
 }
-p {
-    @include fonts();
-    color: $accent2;
-    background-color: $background;
+.participation h3,
+.benefits h3,
+.design-selection h3,
+.design-archives h3,
+.zen-resources h3 {
+    @include h-fonts();
+    @include upper();
+    color: $light-text-color;
+    margin-left: 25px;
+    margin-right: 25px;
 }
-a {
-    color: $dark-text;
-    font-family: $font-links;
+
+// body text
+.preamble p,
+.explanation p,
+.requirements p {
+    @include b-fonts();
+    color: $dark-text-color;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.summary p,
+.participation p,
+.benefits p {
+    @include b-fonts();
+    color: $light-text-color;
+    margin-left: 25px;
+    margin-right: 25px;
+    
+}
+.requirements a {
+    @include l-fonts();
+    color: $dark-text-color;
+    text-decoration: none;
+
+}
+
+// links
+.summary a,
+.participation a,
+footer a,
+.sidebar a {
+    @include l-fonts();
+    color: $light-text-color;
     text-decoration: none;
 }
-a:visited {
-    color: $light-text;
-}
-a:hover, a:active {
-    color: $accent2;
-}
+//a:visited {
+//    color: $light-text-color;
+//}
+//a:hover, a:active {
+//    color: $accent2-color;
+//}
+
 
