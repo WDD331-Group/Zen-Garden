@@ -1,12 +1,13 @@
-@use "_variables" as *;
-@use "_atoms";
+/* Style Guide/Pattern Library */
+@use "style-guide-variables" as *;
+@use "style-guide-atoms";
+@use "style-guide-molecules";
+@use "style-guide-organisms";
 
 * {
     box-sizing: border-box;
 }
+
 body {
-    background-color: $accent2-color;
-    font-family: $body-font;
+    margin: 0;
 }
-
-

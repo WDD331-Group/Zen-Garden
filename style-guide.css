@@ -1,42 +1,146 @@
-h1, h2 {
-  font-family: "Lora", serif;
-  font-size: 2em;
-  text-transform: uppercase;
+/* Style Guide/Pattern Library */
+header > h1, header > h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
 }
 
-h1 {
-  color: #040613;
-  background-color: #223d52;
-}
-
-h2 {
-  color: #34a4cf;
-  background-color: #223d52;
-}
-
-div {
-  padding: 0.5em;
+header > h2 {
+  border: 1px solid #000000;
 }
 
 p {
-  font-family: "Lato", sans-serif;
-  font-size: 1em;
-  color: #34a4cf;
-  background-color: #223d52;
+  margin-left: 10px;
+}
+
+figcaption {
+  padding-top: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.fonts {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #000000;
+  border: 1px solid #000000;
+}
+.fonts__headlines {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 10px;
+}
+.fonts__body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 10px;
+}
+.fonts__links {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 10px;
+}
+
+.colors {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #000000;
+  border: 1px solid #000000;
+}
+.colors__primary {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000000;
+  background-color: #000c50;
+}
+.colors__accent-1 {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000000;
+  background-color: #fff9d9;
+}
+.colors__accent-2 {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000000;
+  background-color: #003350;
+}
+.colors__accent-3 {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000000;
+  background-color: #1c0050;
+}
+.colors__text-light {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+.colors__text-dark {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000000;
+  background-color: #000000;
+}
+
+.elements {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #000000;
+  border: 1px solid #000000;
+}
+.elements__h1, .elements__h2, .elements__h3, .elements__h4 {
+  border-bottom: 1px solid #000000;
+}
+.elements__p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid #000000;
+}
+.elements__p--uppercase {
+  text-transform: uppercase;
+}
+.elements__p--uppercase-background-color {
+  text-transform: uppercase;
+  background-color: #fff9d9;
 }
 
 a {
-  color: #040613;
-  font-family: "Lora", serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
   text-decoration: none;
 }
 
-a:visited {
-  color: white;
+/* Style Guide/Pattern Library */
+header,
+.fonts,
+.colors,
+.elements,
+footer {
+  background-color: #ffffff;
+  padding: 25px;
+  margin: 25px;
+  width: auto;
 }
 
-a:hover, a:active {
-  color: #34a4cf;
+.colors {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.fonts > h3,
+.colors > h3,
+.elements > h3 {
+  text-shadow: 1px 1px 10px;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style Guide/Pattern Library */
+html {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #003350;
+  padding: 25px;
 }
 
 * {
@@ -44,8 +148,7 @@ a:hover, a:active {
 }
 
 body {
-  background-color: #223d52;
-  font-family: "Lato", sans-serif;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style-guide.css.map */

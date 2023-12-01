@@ -1,3 +1,22 @@
-@use "_variables" as *;
-@use "_atoms";
-@use "_molecules";
+@use "variables" as *;
+@use "atoms" as *;
+@use "molecules";
+
+// main wrapper grid
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    padding: 25px;
+    background-color: $primary-color
+}
+
+@media screen and (min-width: 900px) {
+    .page-wrapper {
+        grid-template-columns: 1fr 20%;
+    }
+    .intro {
+        grid-column: 1 / span 2;
+    }
+} 

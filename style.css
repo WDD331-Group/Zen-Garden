@@ -1,127 +1,183 @@
-h1 {
-  font-family: "Lora", serif;
+/* Zen Garden Style Sheet */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 2em;
-  color: #040613;
-  background-color: #cae5f8;
+  color: #000000;
 }
 
-h2 {
-  font-family: "Lora", serif;
-  font-size: 2em;
-  color: #0d314d;
-}
-
-.preamble h3,
-.explanation h3,
-.requirements h3 {
-  font-family: "Lora", serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: #040613;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.participation h3,
-.benefits h3,
-.design-selection h3,
-.design-archives h3,
-.zen-resources h3 {
-  font-family: "Lora", serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: white;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.preamble p,
-.explanation p,
-.requirements p {
-  font-family: "Lato", sans-serif;
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
-  color: #040613;
-  margin-left: 25px;
-  margin-right: 25px;
+  color: #000000;
 }
 
-.summary p,
-.participation p,
-.benefits p {
-  font-family: "Lato", sans-serif;
+abbr {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
-  color: white;
-  margin-left: 25px;
-  margin-right: 25px;
+  color: red;
 }
 
-.requirements a {
-  font-family: "Lora", serif;
+a {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
   font-size: 1em;
-  color: #040613;
-  text-decoration: none;
+  color: #fff9d9;
+}
+a a:visited {
+  color: #ffffff;
+}
+a a:hover {
+  color: #003350;
+}
+a a:active {
+  color: #1c0050;
 }
 
-.summary a,
-.participation a,
-footer a,
-.sidebar a {
-  font-family: "Lora", serif;
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
-  color: white;
-  text-decoration: none;
+  color: #000000;
+  color: red;
 }
 
-header,
-.summary {
-  background-color: #041936;
-  text-align: center;
-  overflow: hidden;
+/* Zen Garden Style Sheet */
+header::before {
+  position: absolute;
+  content: "";
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-image: linear-gradient(to top, #b4cf30 0%, #a98956 50%, #74946b 100%);
+  box-shadow: 5px 5px 100px #ffffff;
+  left: 20%;
+  z-index: -1;
 }
 
-.preamble,
-.explanation,
-.requirements {
-  background-color: #cae5f8;
-  overflow: hidden;
+header::after {
+  position: absolute;
+  content: "";
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-image: linear-gradient(to top, #74946b 0%, #ff9c00 50%, #ca3635 100%);
+  box-shadow: 5px 5px 100px #ffffff;
+  left: 75%;
+  z-index: -1;
 }
 
-.participation,
-.benefits {
-  background-color: #0d314d;
-  overflow: hidden;
+.intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
 }
 
-footer {
-  background-color: #0d314d;
-  padding: 2em;
-  overflow: hidden;
-}
-
-.wrapper {
-  background-color: #041936;
-  overflow: hidden;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.page-wrapper {
+header {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(#000c50, #fff9d9);
 }
 
-header,
-.summary,
+.summary {
+  background-color: #fff9d9;
+}
+
 .preamble {
-  justify-content: center;
+  background-color: #fff9d9;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+}
+
+.explanation {
+  background-color: #fff9d9;
+}
+
+.participation {
+  background-color: #fff9d9;
+}
+
+.benefits {
+  background-color: #fff9d9;
+}
+
+.requirements {
+  background-color: #fff9d9;
 }
 
 footer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  background-color: #003350;
+}
+
+.sidebar > .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+}
+
+.design-selection {
+  grid-row: 1/span 2;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1em;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #003350;
+}
+
+.design-archives {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1em;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #003350;
+}
+
+.zen-resources {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1em;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #003350;
+}
+
+/* Zen Garden Style Sheet */
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  padding: 25px;
+  background-color: #000c50;
+}
+
+@media screen and (min-width: 900px) {
+  .page-wrapper {
+    grid-template-columns: 1fr 20%;
+  }
+  .intro {
+    grid-column: 1/span 2;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

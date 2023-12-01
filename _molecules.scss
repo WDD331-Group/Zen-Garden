@@ -1,29 +1,106 @@
-@use "_variables" as *;
-@use "_atoms";
+// Molecules (blocks) partial
+@use "variables" as *;
+@use "atoms" as *;
 
-header,
-.summary {
-    background-color: $primary-color;
+
+header::before {
+    @include planet();
+    left: 20%;
+    z-index: -1;
+}    
+header::after {
+    @include planet(
+        $wdth: 150px,
+        $hght: 150px,
+        $img: linear-gradient(
+        to top,
+        $planet-color-3 0%,
+        $planet-color-4 50%,
+        $planet-color-5 100%)
+    );
+    left: 75%;
+    z-index: -1;
+}
+
+// intro
+.intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+// sub-intro
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
     text-align: center;
-    overflow: hidden;
+    background-image: linear-gradient($primary-color, $accent-color-1);
 }
-.preamble,
-.explanation,
-.requirements {
-    background-color: $accent1-color;
-    overflow: hidden;
+.summary {
+    background-color: $accent-color-1;
 }
-.participation,
+.preamble {
+    background-color: $accent-color-1;
+}
+
+// main
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+// sub-main
+.explanation {
+    background-color: $accent-color-1;
+}
+.participation {
+    background-color: $accent-color-1;
+}
 .benefits {
-    background-color: $accent2-color;
-    overflow: hidden;
+    background-color: $accent-color-1;
+}
+.requirements {
+    background-color: $accent-color-1;
 }
 footer {
-    background-color: $accent2-color;
-    padding: 2em;
-    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: $accent-color-2;
 }
-.wrapper {
-    background-color: $primary-color;
-    overflow: hidden;
+
+// sidebar
+.sidebar > .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 10px;
 }
+// sub-sidebar
+.design-selection {
+    grid-row: 1 / span 2;
+    @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
+    text-transform: uppercase;
+    background-color: $accent-color-2;
+}
+.design-archives {
+    @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
+    text-transform: uppercase;
+    background-color: $accent-color-2;
+}
+.zen-resources {
+    @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
+    text-transform: uppercase;
+    background-color: $accent-color-2;
+}
+
+//nav {
+//    display: flex;
+//    flex-flow: row nowrap;
+//    background-color: $accent-color-2;
+//}
+
+

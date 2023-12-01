@@ -1,101 +1,71 @@
-@use "_variables" as *;
+// Atoms (elements) partial
+@use "variables" as *;
+
 
 // mixins
-@mixin h-fonts($fontFamily: $headline-font, $fontSize: 2em) {
-    font-family: $fontFamily;
-    font-size: $fontSize;
+@mixin planet(
+    $pos: absolute,
+    $con: "",
+    $hght: 100px,
+    $wdth: 100px,
+    $rad: 50%,
+    $img: linear-gradient(
+        to top,
+        $planet-color-1 0%,
+        $planet-color-2 50%,
+        $planet-color-3 100%),
+    $shd: 5px 5px 100px #ffffff
+    ) {
+    position: $pos;
+    content: $con;
+    height: $hght;
+    width: $wdth;
+    border-radius: $rad;
+    background-image: $img;
+    box-shadow: $shd;
 }
-@mixin b-fonts($fontFamily: $body-font, $fontSize: 1em) {
-    font-family: $fontFamily;
-    font-size: $fontSize;
-}
-@mixin l-fonts($fontFamily: $link-font, $fontSize: 1em) {
-    font-family: $fontFamily;
-    font-size: $fontSize;
-}
-@mixin upper() {
-    text-transform: uppercase;
+@mixin font($fnt-fam: $headline-font, $fnt-sze: 2em, $fnt-clr: $text-color-dark) {
+    font-family: $fnt-fam;
+    font-size: $fnt-sze;
+    color: $fnt-clr;
 }
 
-//div {
-//   padding: .5em;
-//   border: solid black 1px;
+//@mixin prefixes-transform($value) {
+//    -webkit-transform: $value;
+//    -ms-transform: $value;
 //}
 
-// main headings
-h1 {
-    @include h-fonts();
-    color: $dark-text-color;
-    background-color: $accent1-color;
-    //width: 20%;
+//elements
+h1, h2, h3 {
+    @include font();
 }
-h2 {
-    @include h-fonts();
-    color: $accent2-color;
-    
+p {
+    @include font($fnt-fam: $body-font, $fnt-sze: 1em);
 }
-
-// other headings
-.preamble h3,
-.explanation h3,
-.requirements h3 {
-    @include h-fonts();
-    @include upper();
-    color: $dark-text-color;
-    margin-left: 25px;
-    margin-right: 25px;
+abbr {
+    @include font($fnt-fam: $body-font, $fnt-sze: 1em, $fnt-clr: red);
 }
-.participation h3,
-.benefits h3,
-.design-selection h3,
-.design-archives h3,
-.zen-resources h3 {
-    @include h-fonts();
-    @include upper();
-    color: $light-text-color;
-    margin-left: 25px;
-    margin-right: 25px;
+a {
+    @include font($fnt-fam: $link-font, $fnt-sze: 1em, $fnt-clr: $accent-color-1);
+    a:visited {
+        color: $text-color-light;
+    }
+    a:hover {
+        color: $accent-color-2;
+    }
+    a:active {
+        color: $accent-color-3;
+    }
 }
-
-// body text
-.preamble p,
-.explanation p,
-.requirements p {
-    @include b-fonts();
-    color: $dark-text-color;
-    margin-left: 25px;
-    margin-right: 25px;
-}
-.summary p,
-.participation p,
-.benefits p {
-    @include b-fonts();
-    color: $light-text-color;
-    margin-left: 25px;
-    margin-right: 25px;
-    
-}
-.requirements a {
-    @include l-fonts();
-    color: $dark-text-color;
-    text-decoration: none;
-
-}
-
-// links
-.summary a,
-.participation a,
-footer a,
-.sidebar a {
-    @include l-fonts();
-    color: $light-text-color;
-    text-decoration: none;
-}
-//a:visited {
-//    color: $light-text-color;
+//nav {
+//
 //}
-//a:hover, a:active {
-//    color: $accent2-color;
-//}
+ul {
+    list-style-type: none;
+}
+li {
+    @include font($fnt-fam: $body-font, $fnt-sze: 1em);
+    color: red;
+}
 
 

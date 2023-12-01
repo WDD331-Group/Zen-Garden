@@ -1,35 +1,14 @@
-// modules
-@use "_atoms";
-@use "_molecules";
-@use "_organisms";
+/* Zen Garden Style Sheet */
+//root scss file
+@use "variables" as *;
+@use "atoms";
+@use "molecules";
+@use "organisms";
 
 * {
     box-sizing: border-box;
 }
-.page-wrapper {
-    display: flex;
-    flex-flow: column wrap;
-}
-//.intro {
-//    display: flex;
-//    flex-flow: column wrap;
-//}
-header,
-.summary,
-.preamble {
-    justify-content: center;
-}
 
-footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-}
-
-.preamble::after {
-    //content: "("height(150px),width(150px),border(solid white 2px),border-radius(50%)")";
-    //(height: 150px),
-    //(width: 150px),
-    //(border: solid white 2px),
-    //(border-radius: 50%);
+body {
+    margin: 0;
 }
