@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @use "variables" as *;
 @use "atoms" as *;
 @use "molecules";
@@ -19,4 +20,32 @@
     .intro {
         grid-column: 1 / span 2;
     }
+=======
+@use "variables" as *;
+@use "atoms" as *;
+@use "molecules";
+
+// main wrapper grid
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    padding: 25px;
+    background-color: $background-color;
+    background-image: radial-gradient(circle, $primary-color 1px, transparent 1px), radial-gradient(circle, $primary-color 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 2px, transparent 2px),
+    radial-gradient(circle, $primary-color 1px, transparent 1px), radial-gradient(circle, $primary-color 2px, transparent 2px);
+    background-size: 225px 150px;
+    background-attachment: fixed;
+    background-position: 0, 50px 50px, -50px -50px, 150px 200px, 100px 100px, -10px -10px;
+}
+
+@media screen and (min-width: 900px) {
+    .page-wrapper {
+        grid-template-columns: 70% 30%;
+    }
+    .intro {
+        grid-column: 1 / span 2;
+    }
+>>>>>>> 975fbfa5a9717dc969d560a909eee3170e5c2531
 } 

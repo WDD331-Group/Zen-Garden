@@ -24,7 +24,7 @@
     background-image: $img;
     box-shadow: $shd;
 }
-@mixin font($fnt-fam: $headline-font, $fnt-sze: 2em, $fnt-clr: $text-color-dark) {
+@mixin font($fnt-fam: $headline-font, $fnt-sze: 2em, $fnt-clr: $text-color-light) {
     font-family: $fnt-fam;
     font-size: $fnt-sze;
     color: $fnt-clr;
@@ -38,6 +38,7 @@
 //elements
 h1, h2, h3 {
     @include font();
+    text-shadow: 0 0 5px $primary-color,
 }
 p {
     @include font($fnt-fam: $body-font, $fnt-sze: 1em);
