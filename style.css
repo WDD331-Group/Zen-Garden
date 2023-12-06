@@ -2,13 +2,14 @@
 h1, h2, h3 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 2em;
-  color: #000000;
+  color: #ffffff;
+  text-shadow: 0 0 5px #CCCCCC;
 }
 
 p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
-  color: #000000;
+  color: #ffffff;
 }
 
 abbr {
@@ -39,7 +40,7 @@ ul {
 li {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
-  color: #000000;
+  color: #ffffff;
   color: red;
 }
 
@@ -77,19 +78,10 @@ header::after {
 
 header {
   display: flex;
+  position: sticky;
   flex-direction: column;
-  position: fixed;
   width: 100%;
   text-align: center;
-  background-image: linear-gradient(#000c50, #fff9d9);
-}
-
-.summary {
-  background-color: #fff9d9;
-}
-
-.preamble {
-  background-color: #fff9d9;
 }
 
 .main {
@@ -97,22 +89,6 @@ header {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 10px;
-}
-
-.explanation {
-  background-color: #fff9d9;
-}
-
-.participation {
-  background-color: #fff9d9;
-}
-
-.benefits {
-  background-color: #fff9d9;
-}
-
-.requirements {
-  background-color: #fff9d9;
 }
 
 footer {
@@ -124,7 +100,7 @@ footer {
 
 .sidebar > .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-auto-rows: auto;
   grid-gap: 10px;
 }
@@ -135,7 +111,6 @@ footer {
   font-size: 1em;
   color: #ffffff;
   text-transform: uppercase;
-  background-color: #003350;
 }
 
 .design-archives {
@@ -143,7 +118,6 @@ footer {
   font-size: 1em;
   color: #ffffff;
   text-transform: uppercase;
-  background-color: #003350;
 }
 
 .zen-resources {
@@ -151,7 +125,6 @@ footer {
   font-size: 1em;
   color: #ffffff;
   text-transform: uppercase;
-  background-color: #003350;
 }
 
 /* Zen Garden Style Sheet */
@@ -161,12 +134,16 @@ footer {
   grid-template-rows: auto;
   grid-gap: 10px;
   padding: 25px;
-  background-color: #000c50;
+  background-color: #000000;
+  background-image: radial-gradient(circle, #CCCCCC 1px, transparent 1px), radial-gradient(circle, #CCCCCC 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 2px, transparent 2px), radial-gradient(circle, #CCCCCC 1px, transparent 1px), radial-gradient(circle, #CCCCCC 2px, transparent 2px);
+  background-size: 225px 150px;
+  background-attachment: fixed;
+  background-position: 0, 50px 50px, -50px -50px, 150px 200px, 100px 100px, -10px -10px;
 }
 
 @media screen and (min-width: 900px) {
   .page-wrapper {
-    grid-template-columns: 1fr 20%;
+    grid-template-columns: 70% 30%;
   }
   .intro {
     grid-column: 1/span 2;
