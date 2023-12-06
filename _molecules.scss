@@ -32,17 +32,10 @@ header::after {
 // sub-intro
 header {
     display: flex;
+    position: sticky;
     flex-direction: column;
-    position: fixed;
     width: 100%;
     text-align: center;
-    background-image: linear-gradient($primary-color, $accent-color-1);
-}
-.summary {
-    background-color: $accent-color-1;
-}
-.preamble {
-    background-color: $accent-color-1;
 }
 
 // main
@@ -53,18 +46,6 @@ header {
     grid-gap: 10px;
 }
 // sub-main
-.explanation {
-    background-color: $accent-color-1;
-}
-.participation {
-    background-color: $accent-color-1;
-}
-.benefits {
-    background-color: $accent-color-1;
-}
-.requirements {
-    background-color: $accent-color-1;
-}
 footer {
     display: flex;
     flex-flow: row wrap;
@@ -75,7 +56,7 @@ footer {
 // sidebar
 .sidebar > .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
     grid-auto-rows: auto;
     grid-gap: 10px;
 }
@@ -84,17 +65,14 @@ footer {
     grid-row: 1 / span 2;
     @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
     text-transform: uppercase;
-    background-color: $accent-color-2;
 }
 .design-archives {
     @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
     text-transform: uppercase;
-    background-color: $accent-color-2;
 }
 .zen-resources {
     @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
     text-transform: uppercase;
-    background-color: $accent-color-2;
 }
 
 //nav {
