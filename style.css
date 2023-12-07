@@ -1,19 +1,19 @@
 /* Zen Garden Style Sheet */
 h1, h2, h3 {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 2em;
   color: #ffffff;
   text-shadow: 0 0 5px #CCCCCC;
 }
 
 p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
   color: #ffffff;
 }
 
 abbr {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
   color: red;
 }
@@ -38,7 +38,7 @@ ul {
 }
 
 li {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
   color: #ffffff;
   color: red;
@@ -107,21 +107,21 @@ footer {
 
 .design-selection {
   grid-row: 1/span 2;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1em;
   color: #ffffff;
   text-transform: uppercase;
 }
 
 .design-archives {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1em;
   color: #ffffff;
   text-transform: uppercase;
 }
 
 .zen-resources {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1em;
   color: #ffffff;
   text-transform: uppercase;
