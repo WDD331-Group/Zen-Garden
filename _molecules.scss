@@ -22,11 +22,6 @@
     background-image: $img;
 }
 
-//@mixin prefixes-transform($value) {
-//    -webkit-transform: $value;
-//    -ms-transform: $value;
-//}
-
 // mixin for borders
 @mixin border(
     $wdth: 1px,
