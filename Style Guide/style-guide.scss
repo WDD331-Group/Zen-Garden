@@ -1,0 +1,13 @@
+/* Style Guide/Pattern Library */
+@use "style-guide-variables" as *;
+@use "style-guide-atoms";
+@use "style-guide-molecules";
+@use "style-guide-organisms";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}

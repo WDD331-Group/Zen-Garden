@@ -1,0 +1,103 @@
+@use "style-guide-variables" as *;
+
+// mixins
+@mixin box($bx-wdth: 200px, $bx-hght: 100px, $bx-brdr: 1px solid #000000) {
+    width: $bx-wdth;
+    height: $bx-hght;
+    border: $bx-brdr;
+}
+@mixin font($fnt: $headline-font) {
+    font-family: $fnt;
+}
+@mixin lower-border($lwr-brdr: 1px solid #000000) {
+    border-bottom: $lwr-brdr;
+}
+
+// elements
+header > h1, header > h2 {
+    @include font();
+    text-align: center;
+}
+header > h2 {
+    border: 1px solid #000000;
+}
+p {
+    margin-left: 10px;
+}
+figcaption {
+    padding-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fonts {
+    @include font();
+    color: $text-color-dark;
+    border: 1px solid #000000;
+    &__headlines {
+        @include lower-border();
+        padding-bottom: 10px;
+    }
+    &__body {
+        @include font($fnt: $body-font);
+        @include lower-border();
+        padding-bottom: 10px;
+    }  
+    &__links {
+        @include font($fnt: $link-font);
+        @include lower-border();
+        padding-bottom: 10px;
+    }
+}
+.colors {
+    @include font();
+    color: $text-color-dark;
+    border: 1px solid #000000;
+    &__primary {
+        @include box();
+        background-color: $primary-color;
+    }
+    &__accent-1 {
+        @include box();
+        background-color: $accent-color-1;
+    }
+    &__accent-2 {
+        @include box();
+        background-color: $accent-color-2;
+    }
+    &__accent-3 {
+        @include box();
+        background-color: $accent-color-3;
+    }
+    &__text-light {
+        @include box();
+        background-color: $text-color-light;
+    }
+    &__text-dark {
+        @include box();
+        background-color: $text-color-dark;
+    }
+}
+.elements {
+    @include font();
+    color: $text-color-dark;
+    border: 1px solid #000000;
+    &__h1, &__h2, &__h3, &__h4 {
+        @include lower-border();
+    }
+    &__p {
+        @include font($fnt: $body-font);
+        @include lower-border();
+        &--uppercase { 
+            text-transform: uppercase;
+        }
+        &--uppercase-background-color {
+            text-transform: uppercase;
+            background-color: $accent-color-1;
+        }
+    } 
+}
+a {
+    @include font($fnt: $link-font);
+    text-decoration: none;
+}
