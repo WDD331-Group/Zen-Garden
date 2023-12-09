@@ -1,84 +1,124 @@
 // Molecules (blocks) partial
 @use "variables" as *;
-@use "atoms" as *;
+@use "atoms";
 
-
-header::before {
-    @include planet();
-    left: 20%;
-    z-index: -1;
-}    
-header::after {
-    @include planet(
-        $wdth: 150px,
-        $hght: 150px,
-        $img: linear-gradient(
+// mixin for planets
+@mixin planet(
+    $pstn: absolute,
+    $ctnt: "",
+    $hght: 100px,
+    $wdth: 100px,
+    $rad: 50%,
+    $img: linear-gradient(
         to top,
-        $planet-color-3 0%,
-        $planet-color-4 50%,
-        $planet-color-5 100%)
-    );
-    left: 75%;
-    z-index: -1;
+        $planet-color-1 0%,
+        $planet-color-2 50%,
+        $planet-color-1 100%)) {
+    position: $pstn;
+    content: $ctnt;
+    height: $hght;
+    width: $wdth;
+    border-radius: $rad;
+    background-image: $img;
 }
 
-// intro
-.intro {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 10px;
+//@mixin prefixes-transform($value) {
+//    -webkit-transform: $value;
+//    -ms-transform: $value;
+//}
+
+// mixin for borders
+@mixin border(
+    $wdth: 1px,
+    $sty: dashed,
+    $clr: $primary-color,
+    $rad: 5px) {
+    border-width: $wdth;
+    border-style: $sty;
+    border-color: $clr;
+    border-radius: $rad;
 }
+
 // sub-intro
 header {
     display: flex;
-    position: sticky;
-    flex-direction: column;
+    flex-flow: column wrap;
+    position: fixed;
     width: 100%;
-    text-align: center;
+    background-image: linear-gradient($background-color 60%, $primary-color);
+    h1, h2 {
+        margin: 25px 0;
+    }
+}
+header::before {
+    @include planet();
+    top: 40%;
+    left: 5%;
+    z-index: -1;
+}
+header::after {
+    @include planet(
+        $wdth: 225px,
+        $hght: 225px,
+        $img: linear-gradient(
+        to top,
+        $planet-color-3 0%,
+        $planet-color-4 25%,
+        $planet-color-3 40%,
+        $planet-color-4 70%,
+        $planet-color-3 100%)
+    );
+    top: 5%;
+    left: 15%;
+    z-index: -2;
 }
 
-// main
-.main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 10px;
+// animation using transform property
+h1 {
+    animation: rotate 10s infinite;
+    animation-delay: 5s;
 }
+@keyframes rotate {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.summary {
+    padding-top: 275px;
+}
+.summary, .preamble {
+    @include border()
+}
+
 // sub-main
+.explanation, .participation, .benefits, .requirements {
+    @include border();
+}
 footer {
     display: flex;
     flex-flow: row wrap;
+    margin-bottom: 50px;
     justify-content: space-around;
-    background-color: $accent-color-2;
+    @include border($wdth: 3px, $clr: $accent-color-1);
+    padding: 10px 0;
+    a {
+        padding: 3px 0;
+    }
 }
 
 // sidebar
-.sidebar > .wrapper {
-    display: grid;
-    grid-template-columns: 1fr ;
-    grid-auto-rows: auto;
-    grid-gap: 10px;
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
 }
 // sub-sidebar
-.design-selection {
-    grid-row: 1 / span 2;
-    @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
-    text-transform: uppercase;
+.design-selection, .design-archives, .zen-resources {
+    @include border($clr: $accent-color-1);
+    h3 {
+        margin: 5px;
+    }
 }
-.design-archives {
-    @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
-    text-transform: uppercase;
-}
-.zen-resources {
-    @include font($fnt-sze: 1em, $fnt-clr: $text-color-light);
-    text-transform: uppercase;
-}
-
-//nav {
-//    display: flex;
-//    flex-flow: row nowrap;
-//    background-color: $accent-color-2;
-//}
-
-

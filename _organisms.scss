@@ -1,14 +1,13 @@
 @use "variables" as *;
-@use "atoms" as *;
+@use "atoms";
 @use "molecules";
 
-// main wrapper grid
+// grid layout and background design
 .page-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-gap: 10px;
-    padding: 25px;
+    gap: 10px;
     background-color: $background-color;
     background-image: radial-gradient(circle, $primary-color 1px, transparent 1px), radial-gradient(circle, $primary-color 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 2px, transparent 2px),
     radial-gradient(circle, $primary-color 1px, transparent 1px), radial-gradient(circle, $primary-color 2px, transparent 2px);
@@ -16,12 +15,28 @@
     background-attachment: fixed;
     background-position: 0, 50px 50px, -50px -50px, 150px 200px, 100px 100px, -10px -10px;
 }
+// sub-grids
+.intro, .main, .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+}
 
-@media screen and (min-width: 900px) {
+// grid layout change
+@media screen and (min-width: 1200px) {
     .page-wrapper {
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 1fr 25%;
+        .intro {
+            grid-column: 1 / span 2;
+        }
     }
-    .intro {
-        grid-column: 1 / span 2;
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        .benefits, .requirements, footer {
+            grid-column: 1 / span 2;
+        }   
     }
 } 

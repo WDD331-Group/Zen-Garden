@@ -2,71 +2,71 @@
 @use "variables" as *;
 
 
-// mixins
-@mixin planet(
-    $pos: absolute,
-    $con: "",
-    $hght: 100px,
-    $wdth: 100px,
-    $rad: 50%,
-    $img: linear-gradient(
-        to top,
-        $planet-color-1 0%,
-        $planet-color-2 50%,
-        $planet-color-3 100%),
-    $shd: 5px 5px 100px #ffffff
-    ) {
-    position: $pos;
-    content: $con;
-    height: $hght;
-    width: $wdth;
-    border-radius: $rad;
-    background-image: $img;
-    box-shadow: $shd;
-}
-@mixin font($fnt-fam: $headline-font, $fnt-sze: 2em, $fnt-clr: $text-color-light) {
+// mixin for fonts
+@mixin font($fnt-fam: $headline-font, $fnt-sze: 48px, $fnt-clr: $text-color) {
     font-family: $fnt-fam;
     font-size: $fnt-sze;
     color: $fnt-clr;
 }
 
-//@mixin prefixes-transform($value) {
-//    -webkit-transform: $value;
-//    -ms-transform: $value;
-//}
-
-//elements
-h1, h2, h3 {
+// elements
+h1 {
     @include font();
-    text-shadow: 0 0 5px $primary-color,
+    text-align: center;
+}
+h2 {
+    @include font($fnt-sze: 42px);
+    text-align: center;
+    abbr {
+        @include font($fnt-sze: 42px, $fnt-clr: $accent-color-1);
+    }
+}
+h3 {
+    @include font($fnt-sze: 36px, $fnt-clr: $text-color);
+    padding: 0 48px;
+}
+.design-selection h3, .design-archives h3, .zen-resources h3 {
+    @include font($fnt-sze: 30px, $fnt-clr: $text-color);
+    padding: 0 42px;
 }
 p {
-    @include font($fnt-fam: $body-font, $fnt-sze: 1em);
+    @include font($fnt-fam: $body-font, $fnt-sze: 24px);
+    padding: 0 50px;
 }
 abbr {
-    @include font($fnt-fam: $body-font, $fnt-sze: 1em, $fnt-clr: red);
+    @include font($fnt-fam: $body-font, $fnt-sze: 24px, $fnt-clr: $accent-color-1);
+}
+.design-selection abbr, .design-archives abbr, .zen-resources abbr {
+    @include font($fnt-fam: $body-font, $fnt-sze: 18px, $fnt-clr: $accent-color-2);
+}
+// transition effects on pseudo selectors
+abbr:hover {
+    opacity: 0.5;
 }
 a {
-    @include font($fnt-fam: $link-font, $fnt-sze: 1em, $fnt-clr: $accent-color-1);
-    a:visited {
-        color: $text-color-light;
-    }
-    a:hover {
-        color: $accent-color-2;
-    }
-    a:active {
-        color: $accent-color-3;
-    }
+    @include font($fnt-fam: $link-font, $fnt-sze: 24px, $fnt-clr: $accent-color-2);
+    text-decoration: none;
 }
-//nav {
-//
-//}
+.design-selection a, .design-archives a, .zen-resources a {
+    @include font($fnt-fam: $link-font, $fnt-sze: 18px, $fnt-clr: $accent-color-2);
+}
+a:visited {
+    opacity: 0.5;
+}
+a:hover {
+    background-color: $accent-color-2;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: $accent-color-1;
+}
+a:active {
+    text-decoration: underline;
+}
 ul {
-    list-style-type: none;
+    list-style-type: circle;
 }
 li {
-    @include font($fnt-fam: $body-font, $fnt-sze: 1em);
-    color: red;
+    @include font($fnt-fam: $body-font, $fnt-sze: 12px);
+    color: $accent-color-1;
+    padding: 5px;
 }
-
-

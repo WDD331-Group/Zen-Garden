@@ -1,130 +1,195 @@
 /* Zen Garden Style Sheet */
-h1, h2, h3 {
+h1 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 2em;
+  font-size: 48px;
   color: #ffffff;
-  text-shadow: 0 0 5px #CCCCCC;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 42px;
+  color: #ffffff;
+  text-align: center;
+}
+h2 abbr {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 42px;
+  color: #ff0000;
+}
+
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 36px;
+  color: #ffffff;
+  padding: 0 48px;
+}
+
+.design-selection h3, .design-archives h3, .zen-resources h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  padding: 0 42px;
 }
 
 p {
   font-family: "Roboto", sans-serif;
-  font-size: 1em;
+  font-size: 24px;
   color: #ffffff;
+  padding: 0 50px;
 }
 
 abbr {
   font-family: "Roboto", sans-serif;
-  font-size: 1em;
-  color: red;
+  font-size: 24px;
+  color: #ff0000;
+}
+
+.design-selection abbr, .design-archives abbr, .zen-resources abbr {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #fff9d9;
+}
+
+abbr:hover {
+  opacity: 0.5;
 }
 
 a {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
-  font-size: 1em;
+  font-size: 24px;
+  color: #fff9d9;
+  text-decoration: none;
+}
+
+.design-selection a, .design-archives a, .zen-resources a {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
+  font-size: 18px;
   color: #fff9d9;
 }
-a a:visited {
-  color: #ffffff;
+
+a:visited {
+  opacity: 0.5;
 }
-a a:hover {
-  color: #003350;
+
+a:hover {
+  background-color: #fff9d9;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: #ff0000;
 }
-a a:active {
-  color: #1c0050;
+
+a:active {
+  text-decoration: underline;
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: circle;
 }
 
 li {
   font-family: "Roboto", sans-serif;
-  font-size: 1em;
+  font-size: 12px;
   color: #ffffff;
-  color: red;
+  color: #ff0000;
+  padding: 5px;
 }
 
 /* Zen Garden Style Sheet */
+header {
+  display: flex;
+  flex-flow: column wrap;
+  position: fixed;
+  width: 100%;
+  background-image: linear-gradient(#000000 60%, #cccccc);
+}
+header h1, header h2 {
+  margin: 25px 0;
+}
+
 header::before {
   position: absolute;
   content: "";
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-image: linear-gradient(to top, #b4cf30 0%, #a98956 50%, #74946b 100%);
-  box-shadow: 5px 5px 100px #ffffff;
-  left: 20%;
+  background-image: linear-gradient(to top, #a41515 0%, #650606 50%, #a41515 100%);
+  top: 40%;
+  left: 5%;
   z-index: -1;
 }
 
 header::after {
   position: absolute;
   content: "";
-  height: 150px;
-  width: 150px;
+  height: 225px;
+  width: 225px;
   border-radius: 50%;
-  background-image: linear-gradient(to top, #74946b 0%, #ff9c00 50%, #ca3635 100%);
-  box-shadow: 5px 5px 100px #ffffff;
-  left: 75%;
-  z-index: -1;
+  background-image: linear-gradient(to top, #a98956 0%, #5b3e10 25%, #a98956 40%, #5b3e10 70%, #a98956 100%);
+  top: 5%;
+  left: 15%;
+  z-index: -2;
 }
 
-.intro {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 10px;
+h1 {
+  animation: rotate 10s infinite;
+  animation-delay: 5s;
 }
 
-header {
-  display: flex;
-  position: sticky;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
+@keyframes rotate {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+.summary {
+  padding-top: 275px;
 }
 
-.main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 10px;
+.summary, .preamble {
+  border-width: 1px;
+  border-style: dashed;
+  border-color: #cccccc;
+  border-radius: 5px;
+}
+
+.explanation, .participation, .benefits, .requirements {
+  border-width: 1px;
+  border-style: dashed;
+  border-color: #cccccc;
+  border-radius: 5px;
 }
 
 footer {
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 50px;
   justify-content: space-around;
-  background-color: #003350;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: #ff0000;
+  border-radius: 5px;
+  padding: 10px 0;
+}
+footer a {
+  padding: 3px 0;
 }
 
-.sidebar > .wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
-  grid-gap: 10px;
+.wrapper {
+  display: flex;
+  flex-flow: column wrap;
 }
 
-.design-selection {
-  grid-row: 1/span 2;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1em;
-  color: #ffffff;
-  text-transform: uppercase;
+.design-selection, .design-archives, .zen-resources {
+  border-width: 1px;
+  border-style: dashed;
+  border-color: #ff0000;
+  border-radius: 5px;
 }
-
-.design-archives {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1em;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.zen-resources {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1em;
-  color: #ffffff;
-  text-transform: uppercase;
+.design-selection h3, .design-archives h3, .zen-resources h3 {
+  margin: 5px;
 }
 
 /* Zen Garden Style Sheet */
@@ -132,20 +197,34 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-gap: 10px;
-  padding: 25px;
+  gap: 10px;
   background-color: #000000;
-  background-image: radial-gradient(circle, #CCCCCC 1px, transparent 1px), radial-gradient(circle, #CCCCCC 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 2px, transparent 2px), radial-gradient(circle, #CCCCCC 1px, transparent 1px), radial-gradient(circle, #CCCCCC 2px, transparent 2px);
+  background-image: radial-gradient(circle, #cccccc 1px, transparent 1px), radial-gradient(circle, #cccccc 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 2px, transparent 2px), radial-gradient(circle, #cccccc 1px, transparent 1px), radial-gradient(circle, #cccccc 2px, transparent 2px);
   background-size: 225px 150px;
   background-attachment: fixed;
   background-position: 0, 50px 50px, -50px -50px, 150px 200px, 100px 100px, -10px -10px;
 }
 
-@media screen and (min-width: 900px) {
+.intro, .main, .wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+@media screen and (min-width: 1200px) {
   .page-wrapper {
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 1fr 25%;
   }
-  .intro {
+  .page-wrapper .intro {
+    grid-column: 1/span 2;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .main .benefits, .main .requirements, .main footer {
     grid-column: 1/span 2;
   }
 }
