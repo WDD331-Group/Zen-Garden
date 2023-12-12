@@ -5,6 +5,7 @@ header,
 .fonts,
 .colors,
 .elements,
+.wireframes,
 footer {
     background-color: #ffffff;
     padding: 25px;
@@ -17,7 +18,8 @@ footer {
 }
 .fonts > h3,
 .colors > h3,
-.elements > h3 {
+.elements > h3,
+.wireframes > h3 {
     text-shadow: 1px 1px 10px;
 }
 footer {

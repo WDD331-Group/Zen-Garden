@@ -1,7 +1,7 @@
 @use "style-guide-variables" as *;
 
 // mixins
-@mixin box($bx-wdth: 200px, $bx-hght: 100px, $bx-brdr: 1px solid #000000) {
+@mixin box($bx-wdth: 150px, $bx-hght: 100px, $bx-brdr: 1px solid #000000) {
     width: $bx-wdth;
     height: $bx-hght;
     border: $bx-brdr;
@@ -14,11 +14,13 @@
 }
 
 // elements
-header > h1, header > h2 {
+h1 {
     @include font();
     text-align: center;
 }
-header > h2 {
+h2 {
+    @include font();
+    text-align: center;
     border: 1px solid #000000;
 }
 p {
@@ -32,7 +34,7 @@ figcaption {
 
 .fonts {
     @include font();
-    color: $text-color-dark;
+    color: #000000;
     border: 1px solid #000000;
     &__headlines {
         @include lower-border();
@@ -51,11 +53,15 @@ figcaption {
 }
 .colors {
     @include font();
-    color: $text-color-dark;
+    color: #000000;
     border: 1px solid #000000;
     &__primary {
         @include box();
         background-color: $primary-color;
+    }
+    &__background {
+        @include box();
+        background-color: $background-color;
     }
     &__accent-1 {
         @include box();
@@ -65,36 +71,30 @@ figcaption {
         @include box();
         background-color: $accent-color-2;
     }
-    &__accent-3 {
+    &__text {
         @include box();
-        background-color: $accent-color-3;
+        background-color: $text-color;
     }
-    &__text-light {
+    &__planet-a {
         @include box();
-        background-color: $text-color-light;
+        background-image: linear-gradient($planet-color-1, $planet-color-2);
     }
-    &__text-dark {
+    &__planet-b {
         @include box();
-        background-color: $text-color-dark;
+        background-image: linear-gradient($planet-color-3, $planet-color-4);
     }
 }
 .elements {
     @include font();
-    color: $text-color-dark;
+    color: #000000;
     border: 1px solid #000000;
-    &__h1, &__h2, &__h3, &__h4 {
+    &__h {
+        @include font();
         @include lower-border();
     }
     &__p {
         @include font($fnt: $body-font);
         @include lower-border();
-        &--uppercase { 
-            text-transform: uppercase;
-        }
-        &--uppercase-background-color {
-            text-transform: uppercase;
-            background-color: $accent-color-1;
-        }
     } 
 }
 a {
